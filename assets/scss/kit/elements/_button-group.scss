@@ -1,0 +1,12 @@
+.btn-group {
+	border: 1px solid $gray-200;
+	position: relative;
+	display: inline-flex;
+	vertical-align: middle;
+	padding: 1px;
+	border-radius: 2rem;
+	> .btn {
+		position: relative;
+		flex: 0 1 auto;
+	}
+}

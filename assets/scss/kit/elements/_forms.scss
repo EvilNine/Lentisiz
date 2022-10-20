@@ -1,0 +1,164 @@
+.form-control {
+    display: block;
+    width: 100%;
+    height: $input-height;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-size-base;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    // @include box-shadow($input-box-shadow);
+    // @include transition($input-transition);
+
+    &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+    }
+
+    &::placeholder {
+        color: $black;
+        opacity: 1;
+    }
+    &:disabled,
+    &[readonly] {
+        opacity: 1;
+    }
+    &:focus, &:active {
+        outline: 0;
+    }
+    &.has-error {
+        border-color: lighten($danger, 25%) !important;
+        background-color: lighten($danger, 40%) !important;
+    }
+    &.form-control-radius3 {
+        background-color: $white;
+        border-radius: 3px;
+    }
+    &.form-control-fillgray {
+        background-color: $gray-100;
+    }
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+textarea.form-control {
+    height: auto;
+    line-height: 20px;
+    border-radius: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.error-text {
+    color: $danger;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+label.error {
+    color: $white;
+    background: $danger;
+    display: block;
+    padding: 25px 15px 10px;
+    position: relative;
+    top: -20px;
+    border-radius: 0 0px 15px 15px;
+}
+
+.checkbox {
+    label {
+        position: relative;
+        padding: 3px 0 0 35px;
+        font-weight: 100;
+        font-size: 13px;
+        cursor: pointer;
+        input {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            &:checked + .check {
+                background: $danger;
+                border-color: $danger;
+                &:before {
+                    opacity: 1;
+                }
+            }
+            &:disabled {
+                & + .check {
+                    opacity: .3;
+                }
+                & + .check + .checkbox-title {
+                    opacity: .3;
+                }
+            }
+        }
+        .check {
+            background: $white;
+            border: 2px solid $gray-200;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 3px;
+            @include transition(all 0.2s ease-in-out);
+           
+            &:before {
+                @include img-retina('../img/tick.png','../img/tick@2x.png',11px,8px);
+                background-repeat: no-repeat;
+                background-position: center;
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 0;
+                @include transition(all 0.2s ease-in-out);
+            }
+        }
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.checkbox-light {
+        label {
+            input {
+                &:checked + .check {
+                    background-color: $white;
+                    border-color: $input-border-color;
+                }
+            }
+            .check {
+                &:before {
+                    @include img-retina('../img/tick-black.png','../img/tick-black@2x.png',11px,8px);
+                }
+            }
+        }
+    }
+    &.checkbox-fillgray {
+        label {
+            input {
+                & + .check {
+                    background-color: $gray-100;
+                }
+            }
+        }
+    }
+}

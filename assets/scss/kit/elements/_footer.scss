@@ -1,0 +1,49 @@
+.footer {
+    background: darken($primary, 30%);
+    color: $white;
+    padding: 30px 0;
+    // margin-top: 100px;
+    &_title {
+        font-weight: 500;
+        font-size: 17px;
+        margin-bottom: 15px;
+        @media (max-width: 767px) {
+            margin-top: 30px;
+        }
+        &:after {
+            background: $danger;
+            content: '';
+            display: block;
+            width:50px;
+            height: 3px;
+            margin: 5px 0;
+        }
+    }
+    p {
+        font-size: 14px;
+        line-height: 30px;
+        margin: 0;
+        a {
+            font-size: 14px;
+            color: $white;
+            &:hover {
+                color: $danger;
+            }
+        }
+    }
+    .copyright {
+        .copy {
+            font-size: 23px;
+            color: $danger;
+            vertical-align: middle;
+        }
+        
+    }
+    .col-sep {
+        border-left: 1px dashed lighten($black, 20%);
+        position: absolute;
+        left: -15px;
+        top: 0;
+        bottom: 0;
+    }
+}

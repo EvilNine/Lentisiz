@@ -1,0 +1,62 @@
+.category_icon {
+    &--item {
+        background: $white;
+        color: $primary;
+        position: relative;
+        display: block;
+        padding-top: 58%;
+        margin: 0 0.5px 1px;
+        box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+        @include transition(all 0.2s ease-in-out);
+        @media (max-width: 470px) {
+            padding-top: 75%;
+        }
+        @media (max-width: 400px) {
+            padding-top: 100%;
+        }
+        &:hover {
+            background: $danger;
+            color: $white;
+            z-index: 1;
+            .category_icon--img {
+                svg {
+                    path, circle, ellipse {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+    &--num {
+        font-weight: 100;
+        position: absolute;
+        top: 20px;
+        right:20px;
+    }
+    &--content {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+        @media (max-width: 470px) {
+            font-size: 11px;
+        }
+    }
+    &--img {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        svg {
+            width: 100%;
+            height: 100%;
+            path, circle, ellipse {
+                fill: $primary;
+                @include transition(all 0.2s ease-in-out);
+            }
+        }
+    }
+}

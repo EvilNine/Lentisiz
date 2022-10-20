@@ -1,0 +1,172 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    
+}
+
+h1, .h1 {
+	font-size: $h1-font-size;
+	font-weight: 400;
+}
+h2, .h2 { font-size: $h2-font-size; }
+h3, .h3 { font-size: $h3-font-size; }
+h4, .h4 { font-size: $h4-font-size; }
+h5, .h5 { font-size: $h5-font-size; }
+h6, .h6 { font-size: $h6-font-size; }
+
+
+hr {
+
+}
+
+small,
+.small {
+    
+}
+
+mark,
+.mark {
+    
+}
+p {
+	font-size: $font-size-base * .9;
+}
+
+.title {
+	font-family: $font-family-sec;
+	font-size: 30px;
+	font-weight: 400;
+	margin: 0 0 30px;
+	&:after {
+		background: $danger;
+		content: '';
+		width: 50px;
+		height: 3px;
+		display: block;
+		margin: .5em 0;
+	}
+}
+.title-red {
+	font-size: 20px;
+	color: $danger;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+.wysiwyg {
+	p {
+		font-size: .937rem;
+		margin-bottom: 1rem;
+		position: relative;
+		.text-page & {
+			&:first-child {
+				&:before {
+					background: $danger;
+					content: '';
+					width: 40px;
+					height: 3px;
+					border-radius: 3px;
+					position: absolute;
+					left: -100px;
+					top: 6px;
+				}
+			}
+		}
+	}
+	img {
+		max-width: 100%;
+		// box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+	}
+	
+	h2 {
+		font-family: $font-family-sec;
+		font-size: $h1-font-size;
+		position: relative;
+		margin-bottom: 1rem;
+		.text-page & {
+			&:before {
+				background: $danger;
+				content: '';
+				width: 40px;
+				height: 3px;
+				border-radius: 3px;
+				position: absolute;
+				left: -100px;
+				top: 22px;
+			}	
+		}
+		
+	}
+	h3 {
+		font-family: $font-family-sec;
+		font-weight: 400;
+		position: relative;
+		margin-bottom: 1rem;
+		.text-page & {
+			&:before {
+				background: $danger;
+				content: '';
+				width: 40px;
+				height: 3px;
+				border-radius: 3px;
+				position: absolute;
+				left: -100px;
+				top: 18px;
+			}
+		}
+	}
+	h4 {
+		font-family: $font-family-sec;
+		font-weight: 400;
+		position: relative;
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+		.text-page & {
+			&:before {
+				background: $danger;
+				content: '';
+				width: 40px;
+				height: 3px;
+				border-radius: 3px;
+				position: absolute;
+				left: -100px;
+				top: 14px;
+			}
+		}
+	}
+	h5 {
+		font-family: $font-family-sec;
+		font-weight: 400;
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+	}
+	ol {
+		list-style-position: outside;
+		margin: 0;
+		padding: 0 0 0 20px;
+		li {
+			font-size: .937rem;
+			margin-bottom: 1rem;
+			padding-left: 10px;
+		}
+	}
+	ul {
+		list-style-position: outside;
+		margin: 0;
+		padding: 0 0 0 20px;
+		li {
+			font-size: .937rem;
+			margin-bottom: 1rem;
+			padding-left: 10px;
+		}
+	}
+	hr {
+		background: $danger;
+		border: 0;
+		width: 70px;
+		margin: 60px auto;
+		height: 3px;
+	}
+}
+
+.text-danger {
+	color: $danger !important;
+}

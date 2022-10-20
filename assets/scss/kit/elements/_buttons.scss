@@ -1,0 +1,212 @@
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 10px 22px 9px;
+    font-size: 13px;
+    font-weight: 100;
+    cursor: pointer;
+    line-height: 1.5;
+    border-radius: 40px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &-light {
+        background: $input-bg;
+        border: $input-border-width solid $input-border-color;
+    }
+    &-default {
+        background: $input-bg;
+        border: $input-border-width solid $input-bg;
+        .count {
+            background: $danger;
+            position: absolute;
+            right: -5px;
+            top: -3px;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            text-align: center;
+            line-height: 16px;
+            color: $white;
+            font-size: 9px;
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+    &-primary {
+        background: $primary;
+        border: $input-border-width solid $primary;
+        color: $white;
+        &:hover {
+            background: lighten($primary, 10%);
+            color: $white;
+            box-shadow: 0 15px 30px 0 rgba($primary, 0.11), 0 5px 15px 0 rgba($primary, 0.08);
+        }
+        svg {
+            path {
+                fill: $white !important;
+            }
+        }
+    }
+    &-danger {
+        background: $danger;
+        border: $input-border-width solid $danger;
+        color: $white;
+        &:hover {
+            background: lighten($danger, 10%);
+            color: $white;
+            box-shadow: 0 15px 30px 0 rgba($danger, 0.11), 0 5px 15px 0 rgba($danger, 0.08);
+        }
+        svg {
+            path {
+                fill: $white !important;
+            }
+        }
+    }
+    .icon {
+        width: 21px;
+        height: 21px;
+        display: inline-block;
+        position: relative;
+        margin-left: 5px;
+        svg {
+            width: 100%;
+            height: 100%;
+            path, path {
+                fill: $black;
+            }
+        }
+    }
+    &-search {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &.btn-line {
+        background: transparent;
+    }
+
+    &.btn-loadin {
+        color: transparent;
+        position: relative;
+        &:after {
+            background-image: url('../img/loader.svg');
+            background-repeat: no-repeat;
+            background-size: 30px 30px;
+            content: '';
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include translate(-50%,-50%);
+        }
+    }
+}
+
+.btn-sm {
+    padding: 2px 14px;
+    font-size: 13px;
+    font-weight: 100;
+}
+.btn-md {
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 100;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-category {
+    background: none;
+    border: 0;
+    padding: 0 0 0 20px;
+    font-weight: 700;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    .icon {
+        position: absolute;
+        width: 9px;
+        height: 7px;
+        left: 0;
+        top: 6px;
+        @include rotate(180);
+        @include transition(all 0.2s ease-in-out);
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            path {
+                fill: $danger;
+            }
+        }
+    }
+    &.collapsed {
+        .icon {
+            @include rotate(0);    
+        }
+    }
+    .txt {
+        display: inline-block;
+        border-bottom: 1px dashed $gray-300;
+    }
+    .dot {
+        background: $danger;
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 4px;
+    }
+}
+.btn-reset {
+    margin-left: 20px;
+    position: relative;
+    .icon {
+        position: absolute;
+        left: -30px;
+    }
+}
+.btn-just-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    &.btn-danger {
+        svg {
+            width: 100%;
+            height: 100%;
+            path, path {
+                fill: $white;
+            }
+        }
+    }
+    &.btn-default {
+        svg {
+            width: 100%;
+            height: 100%;
+            path, path {
+                fill: $black;
+            }
+        }
+    }
+    
+}
+
+
+.details {
+    display: inline-block;
+    border-bottom: 2px solid $primary;
+    font-size: 14px;
+}
